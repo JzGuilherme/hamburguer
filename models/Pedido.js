@@ -3,13 +3,15 @@ import { DataTypes, Model } from "sequelize";
 
 export default class Pedido extends Model{
     static associate(models){
-        Pedido.hasOne(models.Entrega, {
-            foreignKey: 'pedido_id',
-            as: 'entrega'
-        })
-    }
-};
-
+    Pedido.hasOne(models.Entrega, {
+        foreignKey: 'pedido_id',
+        as: 'entrega'
+    });
+    Pedido.hasOne(models.Avaliacao, {
+        foreignKey: 'pedido_id',
+        as: 'avaliacao'
+    });
+}
 Pedido.init({
     id:{
         type : DataTypes.INTEGER,
