@@ -1,12 +1,9 @@
-import { Router } from 'express';
+import express from 'express';
 import AvaliacaoController from '../controllers/AvaliacaoController.js';
 
-const router = Router();
+const router = express.Router();
 
-router.post('/', AvaliacaoController.create);
-router.get('/', AvaliacaoController.findAll);
-router.get('/:id', AvaliacaoController.findById);
-router.put('/:id', AvaliacaoController.update);
-router.delete('/:id', AvaliacaoController.delete);
+router.post('/', AvaliacaoController.criar);
+router.get('/', AvaliacaoController.listar);
 
 export default router;

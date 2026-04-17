@@ -16,26 +16,20 @@ Avaliacao.init({
         primaryKey: true,
         autoIncrement: true
     },
-    pedido_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-    },
     nota: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-        validate: {
-            min: { args: [1], msg: 'A nota mínima é 1' },
-            max: { args: [5], msg: 'A nota máxima é 5' }
-        }
+        allowNull: false
     },
     comentario: {
         type: DataTypes.TEXT,
         allowNull: true
+    },
+    pedido_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false
     }
 }, {
     sequelize,
-    modelName: 'Avaliacao',
     tableName: 'avaliacoes',
-    timestamps: true,
-    paranoid: true
+    timestamps: true
 });

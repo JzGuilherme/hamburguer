@@ -1,12 +1,10 @@
-import { Router } from 'express';
+import express from 'express';
 import EntregaController from '../controllers/EntregaController.js';
 
-const router = Router();
+const router = express.Router();
 
-router.post('/', EntregaController.create);
-router.get('/', EntregaController.findAll);
-router.get('/:id', EntregaController.findById);
-router.put('/:id', EntregaController.update);
-router.delete('/:id', EntregaController.delete);
+router.post('/', EntregaController.criar);
+router.get('/', EntregaController.listar);
+router.put('/:id', EntregaController.atualizarStatus);
 
 export default router;

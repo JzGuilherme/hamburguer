@@ -11,7 +11,7 @@ const port = 3000;
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send('API Hamburgueria Rodando! 🍔');
+    res.send('API Hamburgueria Rodando!');
 });
 
 app.use('/categoria', categoriaRoutes);
