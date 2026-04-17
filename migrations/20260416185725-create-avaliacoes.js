@@ -21,19 +21,22 @@ export default {
       },
       nota: {
         type: Sequelize.INTEGER,
-        allowNull: false,
-        validate: {
-          min: 1,
-          max: 5
-        }
+        allowNull: false
       },
       comentario: {
         type: Sequelize.TEXT,
         allowNull: true
       },
-      createdAt: { type: Sequelize.DATE },
-      updatedAt: { type: Sequelize.DATE },
-      deletedAt: { type: Sequelize.DATE }
+      createdAt: {
+        type: Sequelize.DATE,
+        allowNull: false,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
+        allowNull: false,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
+      }
     });
   },
 

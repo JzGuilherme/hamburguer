@@ -1,5 +1,5 @@
-import sequelize from "./Database.js";
-import { DataTypes, Model } from "sequelize";
+import { DataTypes, Model } from 'sequelize';
+import sequelize from './Database.js';
 
 export default class Avaliacao extends Model {
     static associate(models) {
@@ -18,7 +18,11 @@ Avaliacao.init({
     },
     nota: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        validate: {
+            min: 1,
+            max: 5
+        }
     },
     comentario: {
         type: DataTypes.TEXT,
@@ -30,6 +34,7 @@ Avaliacao.init({
     }
 }, {
     sequelize,
+    modelName: 'Avaliacao',
     tableName: 'avaliacoes',
     timestamps: true
 });
