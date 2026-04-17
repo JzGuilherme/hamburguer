@@ -1,14 +1,7 @@
-import sequelize from "./Database.js";
-import { DataTypes, Model } from "sequelize";
+import { DataTypes, Model } from 'sequelize';
+import sequelize from './Database.js';
 
-export default class Entrega extends Model {
-    static associate(models) {
-        Entrega.belongsTo(models.Pedido, {
-            foreignKey: 'pedido_id',
-            as: 'pedido'
-        });
-    }
-}
+export default class Entrega extends Model {}
 
 Entrega.init({
     id: {
@@ -30,6 +23,7 @@ Entrega.init({
     }
 }, {
     sequelize,
+    modelName: 'Entrega',
     tableName: 'entregas',
     timestamps: true
 });
