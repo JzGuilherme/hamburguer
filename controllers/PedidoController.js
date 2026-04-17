@@ -20,9 +20,6 @@ const PedidoController = {
                     { model: Avaliacao, as: 'avaliacao' }
                 ]
             });
-            if (pedidos.length === 0) {
-                throw new Error('Não há pedidos');
-            }
             res.status(200).json(pedidos);
         } catch (error) {
             res.status(500).json({ error: error.message });
