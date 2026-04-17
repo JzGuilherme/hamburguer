@@ -3,10 +3,7 @@ import ProdutoController from '../controllers/ProdutoController.js';
 
 const router = express.Router();
 
-router.get('/', ProdutoController.listar);
 router.post('/', ProdutoController.criar);
-router.get('/:id', ProdutoController.obterPorId);
-router.put('/:id', ProdutoController.atualizar);
-router.delete('/:id', ProdutoController.deletar);
+router.get('/', ProdutoController.listar);
 
 export default router;
