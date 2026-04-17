@@ -16,9 +16,6 @@ const CategoriaController = {
       const categorias = await Categoria.findAll({
         include: [{ model: Produto, as: 'produtos' }]
       });
-      if (categorias.length === 0) {
-        throw new Error('Nenhuma categoria encontrada');
-      }
       res.status(200).json(categorias);
     } catch (error) {
       res.status(500).json({ error: error.message });
